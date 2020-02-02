@@ -1,7 +1,8 @@
 module.exports = {
   'name': 'ping',
   'description': 'XD',
-  execute(msg) {
+  // eslint-disable-next-line no-unused-vars
+  execute(msg, args) {
     msg.channel.send('cabrón');
   },
 };
