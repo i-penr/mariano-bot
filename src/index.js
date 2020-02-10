@@ -1,3 +1,4 @@
+/* eslint-disable brace-style */
 const Discord = require('discord.js');
 const config = require('./config');
 const fs = require('fs');
@@ -22,7 +23,6 @@ client.on('message', msg => {
   const command = args.shift().toLowerCase();
 
   if (!msg.content.toLowerCase().startsWith(config.prefix) || msg.author.bot) return;
-
   if (!client.commands.has(command)) return;
 
   try {
