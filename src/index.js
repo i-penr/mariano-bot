@@ -18,15 +18,15 @@ client.on('ready', () => {
 
 client.on('message', msg => {
 
-  const args = msg.content.slice(config.prefix.length).split(' ');
-  const command = args.shift().toLowerCase();
+  const args = msg.content.slice(config.prefix.length).split(/ +/);
+  const command = args[0].toLowerCase();
 
   if (!msg.content.toLowerCase().startsWith(config.prefix) || msg.author.bot) return;
 
   if (!client.commands.has(command)) return;
 
   try {
-    client.commands.get(command).execute(msg, args);
+    client.commands.get(command).execute(msg, args, client);
   } catch (error) {
     console.log(error);
   }
