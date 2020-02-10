@@ -6,7 +6,7 @@ const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('
 module.exports = {
 
   'name': 'help',
-  'description': 'Description',
+  'description': 'Displays command list',
 
   execute(msg, args) {
 
@@ -15,24 +15,23 @@ module.exports = {
 
       .setColor('#0099ff')
       .setTitle('Command list')
-      .setURL('https://discord.js.org/')
+      // .setURL('https://discord.js.org/')
       .setAuthor('Mariano', 'https://i.imgur.com/wSTFkRM.png', 'https://discord.js.org')
-      .setDescription('Some description here')
+      // .setDescription('Some description here')
       .setThumbnail('https://i.imgur.com/wSTFkRM.png')
-      .addField('Regular field title', 'Some value here')
-      .addBlankField()
-      /*
+      /* .addField('Regular field title', 'Some value here')
+       .addBlankField()
       .addField('Inline field title', 'Some value here', true)
       .addField('Inline field title', 'Some value here', true)
       */
       .setImage('https://i.imgur.com/wSTFkRM.png')
       .setTimestamp()
-      .setFooter('Some footer text here', 'https://i.imgur.com/wSTFkRM.png');
+      .setFooter('Page 1', 'https://i.imgur.com/wSTFkRM.png');
 
 
     for (const file of commandFiles) {
       const command = require(`./${file}`);
-      exampleEmbed.addField(command.name, command.description, false); // false porque lista
+      exampleEmbed.addField(command.name, command.description, false); // false cause list
     }
 
     msg.channel.send(exampleEmbed);
