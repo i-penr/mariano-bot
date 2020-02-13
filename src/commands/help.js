@@ -11,12 +11,12 @@ module.exports = {
   execute(msg, args) {
 
 
-    const exampleEmbed = new Discord.RichEmbed()
+    const embed = new Discord.RichEmbed()
 
       .setColor('#0099ff')
       .setTitle('Command list')
       // .setURL('https://discord.js.org/')
-      .setAuthor('Mariano', 'https://i.imgur.com/wSTFkRM.png', 'https://discord.js.org')
+      .setAuthor('Mariano', 'https://i.imgur.com/wSTFkRM.png', 'https://github.com/Zatapo/mariano-bot/')
       // .setDescription('Some description here')
       .setThumbnail('https://i.imgur.com/wSTFkRM.png')
       /* .addField('Regular field title', 'Some value here')
@@ -31,10 +31,10 @@ module.exports = {
 
     for (const file of commandFiles) {
       const command = require(`./${file}`);
-      exampleEmbed.addField(command.name, command.description, false); // false cause list
+      embed.addField(command.name, command.description, false); // false cause list
     }
 
-    msg.channel.send(exampleEmbed);
+    msg.channel.send(embed);
 
   },
 

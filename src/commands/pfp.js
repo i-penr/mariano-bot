@@ -6,7 +6,6 @@ module.exports = {
   'aliases':['icon'],
 
   execute(msg, args) {
-    msg.channel.send(`${msg.author}'s profile pic`, msg.author.avatarURL);
-    // msg.channel.send(msg.author.avatarURL);
+    msg.channel.send(`${msg.author}'s profile pic \n ${msg.author.avatarURL}`);
   },
 };
