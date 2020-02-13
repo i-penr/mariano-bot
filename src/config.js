@@ -1,4 +1,4 @@
 module.exports = {
-  'token': 'nope',
+  'token': 'cute girls out there hit me up',
   'prefix': 'ñ',
 };
