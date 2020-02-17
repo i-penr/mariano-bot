@@ -1,9 +1,9 @@
 module.exports = {
   'name': 'ping',
-  'description': 'Shows server\'s ping',
+  'description': 'Shows bot\'s latency on the server',
   'aliases': [],
 
   execute(msg, args, client) {
-    msg.channel.send(`Pong\nLatency: ${client.ping}`);
+    msg.channel.send(`Pong!\nLatency: ${client.ping}`);
   },
 };
