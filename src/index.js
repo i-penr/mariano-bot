@@ -12,7 +12,11 @@ client.on('ready', () => {
 
   for (const file of commandFiles) {
     const command = require(`./commands/${file}`);
+
     client.commands.set(command.name, command);
+    for (const index in command.aliases) {
+      client.commands.set(command.aliases[index], command);
+    }
   }
 });
 
