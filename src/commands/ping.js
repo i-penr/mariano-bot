@@ -4,6 +4,6 @@ module.exports = {
   'aliases': [],
 
   execute(msg, args, client) {
-    msg.channel.send(`Pong!\nLatency: ${client.ping}`);
+    msg.channel.send(`Pong!\nLatency: ${client.ping} ms`);
   },
 };
