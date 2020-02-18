@@ -1,7 +1,9 @@
 module.exports = {
   'name': 'ping',
-  // eslint-disable-next-line no-unused-vars
-  execute(msg, args) {
-    msg.channel.send('cabrón');
+  'description': 'Shows bot\'s latency on the server',
+  'aliases': [],
+
+  execute(msg, args, client) {
+    msg.channel.send(`Pong!\nLatency: ${client.ping} ms`);
   },
 };
