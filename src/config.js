@@ -1,4 +1,4 @@
 module.exports = {
-  'token': 'no',
+  'token': 'token',
   'prefix': 'ñ',
 };
