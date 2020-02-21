@@ -15,7 +15,7 @@ module.exports = {
     const MAX = 10;
     const maxPage = Math.ceil(commandFiles.length / MAX);
 
-    if (isNaN(args[1]) || !args[1]) {
+    if (isNaN(args[1]) || !args[1] || Number(args[1]) <= 0) {
       page = 1;
     } else { page = Number(args[1]); }
 
