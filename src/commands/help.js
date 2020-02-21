@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 const Discord = require ('discord.js');
 const fs = require ('fs');
-const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
+const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js')).sort();
 
 module.exports = {
 
@@ -21,7 +21,6 @@ module.exports = {
 
     if (page > maxPage) {
       page = maxPage;
-      console.log(page);
     }
     page--;
 
@@ -35,7 +34,6 @@ module.exports = {
       .setFooter(`Page ${page + 1}/${maxPage}`);
 
     for (let i = page * commandFiles.length; i < commandFiles.length * page + commandFiles.length; i++) { // Sustituir commandFiles.length por MAX cuando haya más comandos
-      commandFiles.sort();
       const command = require(`./${commandFiles[i]}`);
       embed.addField(command.name, command.description, false);
     }
